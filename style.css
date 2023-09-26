@@ -1,0 +1,93 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.Main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.Container {
+    width: 80%;
+    height: 700px;
+
+    display: grid;
+    grid-template-columns: repeat(4,1fr );
+    gap: 12px;
+
+}
+.Box {
+    background-color: royalblue;
+    padding: 12px;
+    transition: all 1s ease;
+    border-radius: 6px;
+}
+
+#Box-1 {
+    background: url(https://images.pexels.com/photos/15832951/pexels-photo-15832951/free-photo-of-photo-of-the-taj-mahal-in-india.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load);
+    background-size: cover;
+    background-position: center;
+    grid-row-start: 1;
+    grid-row-end: 4;
+} 
+
+#Box-2 {
+    background: url(https://images.pexels.com/photos/17427379/pexels-photo-17427379/free-photo-of-a-pelican-by-a-sea.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-position: center;
+} 
+
+
+#Box-3 {
+    background: url(https://images.pexels.com/photos/7389639/pexels-photo-7389639.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1);
+    background-size: cover;
+    background-position: center;
+    grid-column: 3/ span 2;
+    grid-row: 1/ span 2;
+} 
+
+
+.Box:hover {
+    scale: 1.1;
+}
+
+.Container:hover .Box:not(:hover) {
+    scale: 0.9;
+    filter: blur(1px);
+}
+
+/* @media screen and  (orientation:portrait) {
+    .Container {
+        grid-template-columns:  1fr 1fr;
+        grid-auto-rows: 300px;
+    }
+    #Box-3 {
+        grid-column: 1/ span 2;
+        grid-row: 4/span 2;
+    }
+}
+@media screen and  (width <600px) {
+    .Container {
+        width: 80%;
+        grid-template-columns:  1fr ;
+        grid-auto-rows: 300px;
+    }
+    #Box-3 {
+        grid-column: 1;
+        grid-row: 5/span 2;
+    }
+}
+ */
+
+
+ @media screen and (orientation:portrait) {
+    .Container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    #Box-3{
+        grid-column: 1/span 2;
+       grid-row: 4 ;
+    }
+ }
